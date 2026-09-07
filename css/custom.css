@@ -9,7 +9,10 @@
   100% { clip-path: inset(0 0 0 0); }
 }
 
-
+/* ===== indexImg 白色水墨蒙版 ===== */
+#page-header.full_page::before {
+  background: rgba(255, 255, 255, 0.72) !important;
+}
 
 /* ===== 主体背景：水墨风墨雾白幕（覆盖主题 #web_bg 的背景图）===== */
 #web_bg {
