@@ -27,16 +27,16 @@
     lrcType: 0,            // 0 代表不展示歌词，想加歌词可以改
     audio: [
       {
-        name: '歌曲名字1',
-        artist: '歌手1',
+        name: '天使',
+        artist: '光良',
         url: 'https://example.com', // 这里放你歌曲的真实网络音频链接
-        cover: '/img/pan.jpg'                 // 歌曲封面
+        cover: '/img/71365326c8964bb324aedac4e95c8564.jpg'                 // 歌曲封面
       },
       {
         name: '歌曲名字2',
         artist: '歌手2',
         url: 'https://example.com',
-        cover: '/img/pan.jpg'
+        cover: '/img/71365326c8964bb324aedac4e95c8564.jpg'
       }
     ]
   });
