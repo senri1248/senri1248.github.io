@@ -2,7 +2,7 @@
 #page-header.full_page {
   background:
     linear-gradient(rgba(255, 255, 255, .32), rgba(255, 255, 255, .18) 45%, rgba(255, 255, 255, .95) 100%),
-    url('/img/beijing.jpg') center/cover no-repeat !important;
+    url('/img/pan3') center/cover no-repeat !important;
   animation: ink-unfold 1.8s cubic-bezier(.25, .6, .25, 1) forwards;
 }
 
@@ -248,14 +248,14 @@
 #body-wrap.type-link #page-header {
   background:
     linear-gradient(rgba(255, 255, 255, .32), rgba(255, 255, 255, .18) 45%, rgba(255, 255, 255, .9) 100%),
-    url('/img/girl.jpg') center/cover no-repeat !important;
+    url('/img/pan3.jpg') center/cover no-repeat !important;
   animation: ink-unfold 1.4s cubic-bezier(.25, .6, .25, 1) forwards;
 }
 
 #body-wrap.type-categories #page-header {
   background:
     linear-gradient(rgba(255, 255, 255, .32), rgba(255, 255, 255, .18) 45%, rgba(255, 255, 255, .9) 100%),
-    url('/img/dragon.jpg') center/cover no-repeat !important;
+    url('/img/71365326c8964bb324aedac4e95c8564.jpg') center/cover no-repeat !important;
   animation: ink-unfold 1.4s cubic-bezier(.25, .6, .25, 1) forwards;
 }
 
