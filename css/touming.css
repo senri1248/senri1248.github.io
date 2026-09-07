@@ -1,3 +1,29 @@
-#page-header.full_page::before {
-  background-color: rgba(0, 0, 0, 0.3) !important; /* 调低最后的 0.3 可以让背景图更亮更清晰 */
+.indexImg {
+
+    position: relative;
+
+    background-image: url(...);
+
+}
+
+.indexImg::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    z-index: 0;
+
+}
+
+.indexImg > * {
+
+    position: relative;
+
+    z-index: 1;
+
 }
