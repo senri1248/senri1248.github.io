@@ -1,201 +1,543 @@
 /* ===== 首页英雄区：左右铺开动效 ===== */
+
 #page-header.full_page {
-  /* 🎯 已经自动适配你在 _config.butterfly.yml 里写的 index_img */
+
   animation: ink-unfold 1.8s cubic-bezier(.25, .6, .25, 1) forwards;
+
+  /* 保证模糊背景不会露出边缘 */
+
+  overflow: hidden;
+
 }
 
 @keyframes ink-unfold {
-  0%   { clip-path: inset(0 50% 0 50%); }
-  100% { clip-path: inset(0 0 0 0); }
+
+  0% {
+
+    clip-path: inset(0 50% 0 50%);
+
+  }
+
+  100% {
+
+    clip-path: inset(0 0 0 0);
+
+  }
+
 }
 
-/* ===== indexImg 白色水墨蒙版 ===== */
+/* =====================================================
+
+   首页 indexImg：模糊 + 白雾效果
+
+   ===================================================== */
+
+/* 原本主题的遮罩改成白色半透明 */
+
 #page-header.full_page::before {
-  background: rgba(255, 255, 255, 0.72) !important;
+
+  background: rgba(255, 255, 255, 0.28) !important;
+
+  /* 模糊背景 */
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  /* 不让遮罩挡住文字 */
+
+  z-index: 1;
+
 }
 
-/* ===== 主体背景：水墨风墨雾白幕（覆盖主题 #web_bg 的背景图）===== */
-#web_bg {
-  background:
-    radial-gradient(1100px 700px at 18% 18%, rgba(205, 210, 210, .45), transparent 60%),
-    radial-gradient(900px 600px at 82% 25%, rgba(185, 192, 192, .35), transparent 60%),
-    radial-gradient(1000px 750px at 60% 90%, rgba(210, 214, 212, .4), transparent 60%),
-    linear-gradient(135deg, #f7f6f2 0%, #eff0ee 50%, #f7f6f2 100%) !important;
-}
+/* =====================================================
 
-/* ===== 首页文字：黑体 + 深色 ===== */
+   首页文字：黑体 + 深色
+
+   ===================================================== */
+
 #page-header.full_page #site-title,
+
 #page-header.full_page #site-subtitle {
-  font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'SimHei', 'Helvetica Neue', sans-serif;
+
+  font-family:
+
+    'PingFang SC',
+
+    'Microsoft YaHei',
+
+    'Hiragino Sans GB',
+
+    'SimHei',
+
+    'Helvetica Neue',
+
+    sans-serif;
+
   text-shadow: none !important;
+
 }
 
 #page-header.full_page #site-title {
+
   color: #1d1d1f !important;
+
   font-weight: 600;
+
   letter-spacing: .02em;
+
 }
 
 #page-header.full_page #site-subtitle {
+
   color: #3a3a3c !important;
+
   font-weight: 400;
+
 }
 
-/* ===== 打字机光标（仅限主页英雄区，避免子页面标题出现光标）===== */
+/* =====================================================
+
+   打字机光标
+
+   ===================================================== */
+
 #page-header.full_page #site-title,
+
 #page-header.full_page #site-subtitle {
+
   position: relative;
+
 }
 
 #page-header.full_page #site-title::after,
+
 #page-header.full_page #site-subtitle::after {
+
   content: '';
+
   display: inline-block;
+
   width: 2px;
+
   height: .9em;
+
   margin-left: 4px;
+
   vertical-align: baseline;
+
   background: #1d1d1f;
+
   animation: type-caret .8s step-end infinite;
+
 }
 
 #page-header.full_page #site-title.typed-done::after {
+
   animation: none;
+
   opacity: 0;
+
   transition: opacity .3s ease;
+
 }
 
 @keyframes type-caret {
-  50% { opacity: 0; }
+
+  50% {
+
+    opacity: 0;
+
+  }
+
 }
 
-/* ===== 滚动箭头 + 首页社交图标 ===== */
+/* =====================================================
+
+   滚动箭头 + 首页社交图标
+
+   ===================================================== */
+
 #page-header.full_page #scroll-down .scroll-down-effects,
+
 #page-header.full_page #site_social_icons .social-icon {
+
   color: #6e6e73 !important;
+
   text-shadow: none !important;
+
 }
 
-/* ===== 首页导航栏文字加深（白底上可见）===== */
+/* =====================================================
+
+   首页导航栏文字
+
+   ===================================================== */
+
 #page-header.full_page #nav a,
+
 #page-header.full_page #nav span.site-page,
+
 #page-header.full_page #nav #blog-info {
+
   color: #1d1d1f !important;
+
 }
 
 #page-header.full_page #nav a:hover,
+
 #page-header.full_page #nav span.site-page:hover,
+
 #page-header.full_page #nav #toggle-menu:hover {
+
   color: #0a0a0a !important;
+
 }
 
-/* ===== 首页导航栏：毛玻璃模糊（只模糊背后，内容保持清晰）===== */
+/* =====================================================
+
+   首页导航栏：毛玻璃
+
+   ===================================================== */
+
 #page-header.full_page #nav {
+
   background: rgba(255, 255, 255, .55);
+
   -webkit-backdrop-filter: blur(14px);
+
   backdrop-filter: blur(14px);
+
 }
 
-/* ===== 页脚：水墨灰调三栏 ===== */
-#footer {
+/* =====================================================
+
+   主体背景
+
+   ===================================================== */
+
+#web_bg {
+
   background:
-    linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,.92) 55%, rgba(255,255,255,.98) 80%),
-    radial-gradient(600px 420px at 12% 8%, rgba(200, 206, 206, .4), transparent 60%),
-    radial-gradient(520px 360px at 88% 15%, rgba(180, 188, 188, .3), transparent 60%),
-    radial-gradient(700px 460px at 55% 110%, rgba(210, 214, 212, .42), transparent 60%),
-    linear-gradient(135deg, #f7f6f2 0%, #eff0ee 100%) !important;
-  font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'SimHei', 'Helvetica Neue', sans-serif;
+
+    radial-gradient(
+
+      1100px 700px at 18% 18%,
+
+      rgba(205, 210, 210, .45),
+
+      transparent 60%
+
+    ),
+
+    radial-gradient(
+
+      900px 600px at 82% 25%,
+
+      rgba(185, 192, 192, .35),
+
+      transparent 60%
+
+    ),
+
+    radial-gradient(
+
+      1000px 750px at 60% 90%,
+
+      rgba(210, 214, 212, .4),
+
+      transparent 60%
+
+    ),
+
+    linear-gradient(
+
+      135deg,
+
+      #f7f6f2 0%,
+
+      #eff0ee 50%,
+
+      #f7f6f2 100%
+
+    ) !important;
+
+}
+
+/* =====================================================
+
+   页脚：水墨灰调
+
+   ===================================================== */
+
+#footer {
+
+  background:
+
+    linear-gradient(
+
+      to top,
+
+      rgba(255,255,255,0) 0%,
+
+      rgba(255,255,255,.92) 55%,
+
+      rgba(255,255,255,.98) 80%
+
+    ),
+
+    radial-gradient(
+
+      600px 420px at 12% 8%,
+
+      rgba(200, 206, 206, .4),
+
+      transparent 60%
+
+    ),
+
+    radial-gradient(
+
+      520px 360px at 88% 15%,
+
+      rgba(180, 188, 188, .3),
+
+      transparent 60%
+
+    ),
+
+    radial-gradient(
+
+      700px 460px at 55% 110%,
+
+      rgba(210, 214, 212, .42),
+
+      transparent 60%
+
+    ),
+
+    linear-gradient(
+
+      135deg,
+
+      #f7f6f2 0%,
+
+      #eff0ee 100%
+
+    ) !important;
+
+  font-family:
+
+    'PingFang SC',
+
+    'Microsoft YaHei',
+
+    'Hiragino Sans GB',
+
+    'SimHei',
+
+    'Helvetica Neue',
+
+    sans-serif;
+
 }
 
 #footer > * {
+
   color: #48484a !important;
+
 }
 
 #footer a {
+
   color: #1d1d1f !important;
+
 }
 
 #footer a:hover {
+
   color: #0a0a0a !important;
+
 }
 
-/* ===== 运行时间：手机时钟式数字滚动 ===== */
+/* =====================================================
+
+   运行时间
+
+   ===================================================== */
+
 #site-runtime.rt {
+
   display: inline-flex;
+
   align-items: baseline;
+
   gap: 3px;
+
 }
 
 .rt-group {
+
   display: inline-flex;
+
   align-items: baseline;
+
   gap: 4px;
+
 }
 
 .rt-cols {
+
   display: inline-flex;
+
   gap: 2px;
+
 }
 
 .rt-col {
+
   display: inline-block;
+
   width: 1em;
+
   height: 1em;
+
   overflow: hidden;
+
   text-align: center;
+
   border-radius: 4px;
+
   background: rgba(0, 0, 0, .05);
-  box-shadow: inset 0 0 0 .5px rgba(0, 0, 0, .04);
+
+  box-shadow:
+
+    inset 0 0 0 .5px rgba(0, 0, 0, .04);
+
 }
 
 .rt-strip {
+
   display: flex;
+
   flex-direction: column;
-  transition: transform .45s cubic-bezier(.2, .7, .2, 1);
+
+  transition:
+
+    transform .45s cubic-bezier(.2, .7, .2, 1);
+
   will-change: transform;
+
 }
 
 .rt-strip span {
+
   display: block;
+
   height: 1em;
+
   line-height: 1em;
+
   text-align: center;
+
   color: #1d1d1f;
+
   font-weight: 600;
+
 }
 
 .rt-unit {
+
   color: #48484a;
+
   font-weight: 500;
+
   margin-right: 8px;
+
 }
 
-/* ===== 红色跳动爱心 ===== */
+/* =====================================================
+
+   红色跳动爱心
+
+   ===================================================== */
+
 .footer-heart {
+
   display: inline-block;
+
   margin-left: 6px;
+
   color: #ff3b30;
+
   font-size: .9em;
-  animation: footer-heartbeat 1.2s ease-in-out infinite;
+
+  animation:
+
+    footer-heartbeat 1.2s ease-in-out infinite;
+
   transform-origin: center;
+
 }
 
 @keyframes footer-heartbeat {
-  0%, 100% { transform: scale(1); }
-  12% { transform: scale(1.25); }
-  24% { transform: scale(1); }
-  36% { transform: scale(1.25); }
-  48% { transform: scale(1); }
+
+  0%,
+
+  100% {
+
+    transform: scale(1);
+
+  }
+
+  12% {
+
+    transform: scale(1.25);
+
+  }
+
+  24% {
+
+    transform: scale(1);
+
+  }
+
+  36% {
+
+    transform: scale(1.25);
+
+  }
+
+  48% {
+
+    transform: scale(1);
+
+  }
+
 }
 
-/* ===== 拖拽音乐台（吸底 APlayer）样式美化 ===== */
+/* =====================================================
+
+   拖拽音乐台
+
+   ===================================================== */
+
 #ink-player {
+
   backdrop-filter: blur(7px);
+
   -webkit-backdrop-filter: blur(7px);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, .25);
+
+  box-shadow:
+
+    0 14px 40px rgba(0, 0, 0, .25);
+
   border-radius: 12px;
+
 }
+
 #ink-player .aplayer {
+
   background: rgba(255, 255, 255, .85) !important;
+
   border-radius: 12px;
-}
