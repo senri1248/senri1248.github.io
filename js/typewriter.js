@@ -11,7 +11,7 @@
   subEl.id = 'site-subtitle';
   siteInfo.insertBefore(subEl, titleEl.nextSibling);
 
-  var phrases = ['索雷阿给动'];
+  var phrases = ['我爱技术，我爱生活'];
 
   function typeText(el, text, speed, cb) {
     var i = 0;
