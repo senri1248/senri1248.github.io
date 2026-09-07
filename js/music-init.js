@@ -29,12 +29,12 @@
       {
         name: '天使',
         artist: '光良',
-        url: 'https://example.com', // 这里放你歌曲的真实网络音频链接
+        url: '/music/tianshi.mp3', // 这里放你歌曲的真实网络音频链接
         cover: '/img/71365326c8964bb324aedac4e95c8564.jpg'                 // 歌曲封面
       },
       {
-        name: '歌曲名字2',
-        artist: '歌手2',
+        name: '生如夏花',
+        artist: '朴树',
         url: 'https://example.com',
         cover: '/img/71365326c8964bb324aedac4e95c8564.jpg'
       }
