@@ -41,21 +41,32 @@
 }
 
 /* ===== 打字机光标：改为白色 ===== */
-#page-header.full_page #site-title,
-#page-header.full_page #site-subtitle {
+/* ===== 🎯 打字机光标：精准精修版（只保留主标题光标，删除了副标题误伤）===== */
+#page-header.full_page #site-title {
   position: relative;
 }
 
-#page-header.full_page #site-title::after,
-#page-header.full_page #site-subtitle::after {
+/* 只给主标题的屁股后面加闪烁竖线 */
+#page-header.full_page #site-title::after {
   content: '';
   display: inline-block;
   width: 2px;
   height: .9em;
-  margin-left: 4px;
+  margin-left: 6px;
   vertical-align: baseline;
-  background: #ffffff; /* 核心修改：光标改为白色 */
+  background: #ffffff; 
   animation: type-caret .8s step-end infinite;
+}
+
+/* 当你的 JS 运行完毕，给主标题加上 .typed-done 类名时，CSS 自动把这根白线隐藏掉 */
+#page-header.full_page #site-title.typed-done::after {
+  animation: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+@keyframes type-caret {
+  50% { opacity: 0; }
 }
 
 #page-header.full_page #site-title.typed-done::after {
