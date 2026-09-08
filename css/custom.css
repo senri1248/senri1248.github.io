@@ -1,6 +1,5 @@
 /* ===== 首页英雄区：左右铺开动效 ===== */
 #page-header.full_page {
-  /* 🎯 已经自动适配你在 _config.butterfly.yml 里写的 index_img */
   animation: ink-unfold 1.8s cubic-bezier(.25, .6, .25, 1) forwards;
 }
 
@@ -9,12 +8,12 @@
   100% { clip-path: inset(0 0 0 0); }
 }
 
-/* 去掉主题自带的 30% 深色遮罩，让你自己的背景图清晰显现 */
+/* 去掉主题自带的 30% 深色遮罩，如果你觉得背景太亮导致白字看不清，可以把下面这三行删掉（保留默认遮罩） */
 #page-header.full_page:before {
   background: none !important;
 }
 
-/* ===== 主体背景：水墨风墨雾白幕（覆盖主题 #web_bg 的背景图）===== */
+/* ===== 主体背景：水墨风墨雾白幕 ===== */
 #web_bg {
   background:
     radial-gradient(1100px 700px at 18% 18%, rgba(205, 210, 210, .45), transparent 60%),
@@ -23,25 +22,25 @@
     linear-gradient(135deg, #f7f6f2 0%, #eff0ee 50%, #f7f6f2 100%) !important;
 }
 
-/* ===== 首页文字：黑体 + 深色 ===== */
+/* ===== 🎯 首页文字：全部改成白色 ===== */
 #page-header.full_page #site-title,
 #page-header.full_page #site-subtitle {
   font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'SimHei', 'Helvetica Neue', sans-serif;
-  text-shadow: none !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .5) !important; /* 加一层淡淡的阴影，让白字在亮处也清晰 */
 }
 
 #page-header.full_page #site-title {
-  color: #1d1d1f !important;
+  color: #ffffff !important; /* 核心修改：改为纯白 */
   font-weight: 600;
   letter-spacing: .02em;
 }
 
 #page-header.full_page #site-subtitle {
-  color: #3a3a3c !important;
+  color: #eeeeee !important; /* 核心修改：改为亮白 */
   font-weight: 400;
 }
 
-/* ===== 打字机光标（仅限主页英雄区，避免子页面标题出现光标）===== */
+/* ===== 打字机光标：改为白色 ===== */
 #page-header.full_page #site-title,
 #page-header.full_page #site-subtitle {
   position: relative;
@@ -55,7 +54,7 @@
   height: .9em;
   margin-left: 4px;
   vertical-align: baseline;
-  background: #1d1d1f;
+  background: #ffffff; /* 核心修改：光标改为白色 */
   animation: type-caret .8s step-end infinite;
 }
 
@@ -69,29 +68,30 @@
   50% { opacity: 0; }
 }
 
-/* ===== 滚动箭头 + 首页社交图标 ===== */
+/* ===== 🎯 滚动箭头 + 首页社交图标：改为白色 ===== */
 #page-header.full_page #scroll-down .scroll-down-effects,
 #page-header.full_page #site_social_icons .social-icon {
-  color: #6e6e73 !important;
-  text-shadow: none !important;
+  color: #ffffff !important; /* 核心修改：改为白色 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5) !important;
 }
 
-/* ===== 首页导航栏文字加深（白底上可见）===== */
+/* ===== 🎯 首页导航栏文字：全部改为白色（适配深色顶部图）===== */
 #page-header.full_page #nav a,
 #page-header.full_page #nav span.site-page,
 #page-header.full_page #nav #blog-info {
-  color: #1d1d1f !important;
+  color: #ffffff !important; /* 核心修改：菜单改为白色 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4) !important;
 }
 
 #page-header.full_page #nav a:hover,
 #page-header.full_page #nav span.site-page:hover,
 #page-header.full_page #nav #toggle-menu:hover {
-  color: #0a0a0a !important;
+  color: #dddddd !important;
 }
 
-/* ===== 首页导航栏：毛玻璃模糊（只模糊背后，内容保持清晰）===== */
+/* ===== 首页导航栏：毛玻璃模糊 ===== */
 #page-header.full_page #nav {
-  background: rgba(255, 255, 255, .55);
+  background: rgba(0, 0, 0, .15); /* 核心修改：变成透明暗色毛玻璃，以便衬托白字 */
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
